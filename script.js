@@ -41,7 +41,7 @@ require([
             //midwest = 40.83095739836335, -93.88338462979141
             //spatialReference: 3857
           },
-          zoom: 7,
+          zoom: 10,
           popup: {
             actions: []
           }
