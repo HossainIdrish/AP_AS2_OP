@@ -4,6 +4,9 @@ require([
         "esri/layers/ImageryLayer",
         "esri/layers/support/RasterFunction"
       ], (Map, MapView, ImageryLayer, RasterFunction) => {
+        /***************************************
+         * Set up popup template of image layer
+         **************************************/
 
         const imagePopupTemplate = {
           // autocasts as new PopupTemplate()
@@ -14,6 +17,9 @@ require([
             <br>Original values (B, G, R, NIR): <b>{Raster.ItemPixelValue} </b>
             `
         };
+            /*******************************************************************
+         * Create image layer with server defined raster function templates
+         ******************************************************************/
 
         const serviceRFT = new RasterFunction({
           functionName: "NDVI Colorized",
@@ -25,7 +31,9 @@ require([
           rasterFunction: serviceRFT,
           popupTemplate: imagePopupTemplate
         });
-
+        /*************************
+         * Add image layer to map
+         ************************/
         const map = new Map({
           basemap: "hybrid",
           layers: [layer]
@@ -36,9 +44,8 @@ require([
           map: map,
           center: {
             // autocasts as esri/geometry/Point
-            x: -93.88338462979141,
-            y: 40.83095739836335
-            //midwest = 40.83095739836335, -93.88338462979141
+            x: -90.1994,
+            y: 38.6270
             //spatialReference: 3857
           },
           zoom: 10,
